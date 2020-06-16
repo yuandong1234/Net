@@ -26,5 +26,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.squareup.okhttp3:okhttp:4.7.2'
+    implementation 'org.conscrypt:conscrypt-android:2.2.1'
     implementation 'com.google.code.gson:gson:2.8.5'
+
 }

@@ -9,6 +9,8 @@ public interface HttpRequest {
 
     HttpHeader getHeader();
 
+    void setBody(HttpBody httpBody);
+
     HttpBody getBody();
 
     HttpResponse execute() throws IOException;

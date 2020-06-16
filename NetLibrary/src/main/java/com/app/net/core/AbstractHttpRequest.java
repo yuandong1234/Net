@@ -9,11 +9,16 @@ import java.io.IOException;
 
 public abstract class AbstractHttpRequest implements HttpRequest {
     private HttpHeader mHeader = new HttpHeader();
-    private HttpBody mBody = new HttpBody();
+    private HttpBody mBody;
 
     @Override
     public HttpHeader getHeader() {
         return mHeader;
+    }
+
+    @Override
+    public void setBody(HttpBody httpBody) {
+        this.mBody = httpBody;
     }
 
     @Override

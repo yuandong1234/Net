@@ -22,7 +22,7 @@ public class HttpRunnable implements Runnable {
     @Override
     public void run() {
         try {
-            addRequestBody(mRequest.getBody());
+            mRequest.setBody(mHttpBody);
             HttpResponse response = mRequest.execute();
             //TODO 数据解析 暂时只处理json格式数据
             JsonCallBack callBack = new JsonCallBack(mHttpCallBack);
@@ -35,12 +35,5 @@ public class HttpRunnable implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private void addRequestBody(HttpBody body) {
-        if (mHttpBody == null) return;
-        body.setUrl(mHttpBody.getUrl());
-        body.setHttpMethod(mHttpBody.getHttpMethod());
-        body.setParams(mHttpBody.getParams());
     }
 }
